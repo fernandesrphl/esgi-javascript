@@ -4,13 +4,6 @@ function ucfirst(str) {
     return str[0].toUpperCase() + str.substring(1);
 }
 
-console.log(ucfirst("test"));
-console.log(ucfirst("Test"));
-console.log(ucfirst(" test"));
-console.log(ucfirst("test Test tst"));
-console.log(ucfirst(""));
-console.log(ucfirst(null));
-console.log(ucfirst({}));
 
 function capitalize(str) {
     if (typeof str !== "string" || !str) return '';
@@ -22,18 +15,18 @@ function capitalize(str) {
 
 }
 
-console.log(capitalize("test"));
-console.log(capitalize("Test"));
-console.log(capitalize(" test"));
-console.log(capitalize("test Test tst"));
-console.log(capitalize(""));
-console.log(capitalize(null));
-console.log(capitalize({}));
 
 function camelCase(str) {
     if (typeof str !== "string" || !str) return '';
 
-    return capitalize(str).split(" ").join("");
+    return capitalize(str).split(" ").join("").split("_").join("");
     }
 
-console.log(camelCase("Je suis le TesT"));
+
+
+function snake_case(str) {
+    if (typeof str !== "string" || !str) return '';
+
+    return str.toLowerCase().split(" ").join("_").split("-").join("_");
+}
+
