@@ -25,13 +25,11 @@ function camelCase(str) {
 
 }
 
-console.log(camelCase("je test_la"));
-
-
 
 function snake_case(str) {
     if (typeof str !== "string" || !str) return '';
 
-    return str.toLowerCase().split(" ").join("_").split("-").join("_");
+    return str.toLowerCase().split(/[^a-zA-Z0-9]/).map(function(item) {
+        return item;
+    }).join("_");
 }
-
