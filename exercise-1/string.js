@@ -33,3 +33,12 @@ function snake_case(str) {
         return item;
     }).join("_");
 }
+
+
+function leet(str) {
+    if (typeof str !== "string" || !str) return '';
+
+    return str.replace(/[aA]/g, "4").replace(/[eE]/g, "3").replace(/[iI]/g, "1").replace(/[oO]/g, "0").replace(/[uU]/g, "_").replace(/[yY]/g, "7")
+
+}
+
