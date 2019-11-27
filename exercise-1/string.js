@@ -19,8 +19,13 @@ function capitalize(str) {
 function camelCase(str) {
     if (typeof str !== "string" || !str) return '';
 
-    return capitalize(str).split(" ").join("").split("_").join("");
-    }
+    return str.toLowerCase().split(/[^a-zA-Z0-9]/).map(function(item) {
+        return ucfirst(item);
+    }).join("");
+
+}
+
+console.log(camelCase("je test_la"));
 
 
 
